@@ -1,6 +1,6 @@
 # Lab 01 — Git Essencial (Nill)
 
-Prática:
+Este arquivo foi criado para praticar:
 - git add
 - git commit
 - git push
