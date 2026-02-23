@@ -1,0 +1,32 @@
+### Evidencia 03 — Leitura de arquivos
+Mon Feb 23 05:46:10 -03 2026
+
+## Criando arquivo de exemplo em /tmp
+
+## cat (mostrar tudo)
+linha 01: linux é vida
+linha 02: devops é processo
+linha 03: logs contam historias
+linha 04: grep encontra padroes
+linha 05: head e tail ajudam a inspecionar
+linha 06: praticar todo dia
+linha 07: evidencias tornam o estudo auditavel
+linha 08: commit vira portfolio
+linha 09: disciplina > motivacao
+linha 10: fim
+
+## head -n 3 (primeiras 3 linhas)
+linha 01: linux é vida
+linha 02: devops é processo
+linha 03: logs contam historias
+
+## tail -n 3 (ultimas 3 linhas)
+linha 08: commit vira portfolio
+linha 09: disciplina > motivacao
+linha 10: fim
+
+## wc -l (contar linhas)
+10 /tmp/lab02-linux/texto.txt
+
+## less (visualizacao paginada) — NAO roda aqui porque é interativo
+Dica: rode manualmente: less /tmp/lab02-linux/texto.txt

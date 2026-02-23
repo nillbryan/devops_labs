@@ -1,0 +1,26 @@
+### Evidencia 04 — Texto e busca (grep/sort/uniq/cut/tr)
+Mon Feb 23 05:46:10 -03 2026
+
+## Preparando arquivo de log fake em /tmp
+
+## grep ERROR (filtrar erros)
+ERROR user=carlos action=payment_failed ip=10.0.0.12
+ERROR user=ana action=timeout ip=10.0.0.11
+
+## grep -n (mostrar numero da linha)
+1:INFO user=bryan action=login ip=10.0.0.10
+3:WARN user=bryan action=retry ip=10.0.0.10
+5:INFO user=bryan action=logout ip=10.0.0.10
+
+## cut (extrair apenas user=...)
+      2 user=ana
+      3 user=bryan
+      2 user=carlos
+
+## sort/uniq (contar tipos de nivel INFO/WARN/ERROR)
+      2 ERROR
+      4 INFO
+      1 WARN
+
+## tr (exemplo: deixar tudo em maiusculo)
+DEVOPS LINUX

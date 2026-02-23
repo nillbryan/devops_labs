@@ -1,0 +1,52 @@
+### Evidencia 05 — Permissoes (chmod/chown/umask)
+Mon Feb 23 05:46:10 -03 2026
+
+## Criando pasta e arquivo para permissoes
+total 12
+drwxr-xr-x  2 bryan bryan 4096 Feb 23 05:46 .
+drwxrwxrwt 11 root  root  4096 Feb 23 05:46 ..
+-rw-r--r--  1 bryan bryan   18 Feb 23 05:46 arquivo.txt
+
+## Ver permissao atual (stat)
+  File: arquivo.txt
+  Size: 18        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,64	Inode: 151180      Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   bryan)   Gid: ( 1000/   bryan)
+Access: 2026-02-23 05:46:10.933166448 -0300
+Modify: 2026-02-23 05:46:10.933166448 -0300
+Change: 2026-02-23 05:46:10.933166448 -0300
+ Birth: 2026-02-23 05:46:10.933166448 -0300
+
+## chmod 600 (somente dono pode ler/escrever)
+total 12
+drwxr-xr-x  2 bryan bryan 4096 Feb 23 05:46 .
+drwxrwxrwt 11 root  root  4096 Feb 23 05:46 ..
+-rw-------  1 bryan bryan   18 Feb 23 05:46 arquivo.txt
+  File: arquivo.txt
+  Size: 18        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,64	Inode: 151180      Links: 1
+Access: (0600/-rw-------)  Uid: ( 1000/   bryan)   Gid: ( 1000/   bryan)
+Access: 2026-02-23 05:46:10.933166448 -0300
+Modify: 2026-02-23 05:46:10.933166448 -0300
+Change: 2026-02-23 05:46:10.941966448 -0300
+ Birth: 2026-02-23 05:46:10.933166448 -0300
+
+## chmod 644 (dono escreve, outros leem)
+total 12
+drwxr-xr-x  2 bryan bryan 4096 Feb 23 05:46 .
+drwxrwxrwt 11 root  root  4096 Feb 23 05:46 ..
+-rw-r--r--  1 bryan bryan   18 Feb 23 05:46 arquivo.txt
+  File: arquivo.txt
+  Size: 18        	Blocks: 8          IO Block: 4096   regular file
+Device: 8,64	Inode: 151180      Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/   bryan)   Gid: ( 1000/   bryan)
+Access: 2026-02-23 05:46:10.933166448 -0300
+Modify: 2026-02-23 05:46:10.933166448 -0300
+Change: 2026-02-23 05:46:10.946366448 -0300
+ Birth: 2026-02-23 05:46:10.933166448 -0300
+
+## umask (mascara padrao para novos arquivos)
+0022
+
+## Observacao sobre chown (nao vamos rodar no WSL sem sudo)
+Exemplo: sudo chown usuario:grupo arquivo.txt

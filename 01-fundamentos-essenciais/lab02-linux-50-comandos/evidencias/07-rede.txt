@@ -1,0 +1,58 @@
+### Evidencia 07 — Rede (ip/ss/curl/dig/ping)
+Mon Feb 23 05:46:11 -03 2026
+
+## ip a (interfaces)
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:90:38:a5 brd ff:ff:ff:ff:ff:ff
+    inet 172.23.86.101/20 brd 172.23.95.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe90:38a5/64 scope link 
+       valid_lft forever preferred_lft forever
+
+## ip route (rotas)
+default via 172.23.80.1 dev eth0 proto kernel 
+172.23.80.0/20 dev eth0 proto kernel scope link src 172.23.86.101 
+
+## ss -tulpen (portas em uso) — pode exigir sudo para alguns detalhes
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:PortProcess                                                                 
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*    uid:991 ino:8357 sk:1 cgroup:/system.slice/systemd-resolved.service <->
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*    uid:991 ino:8355 sk:2 cgroup:/system.slice/systemd-resolved.service <->
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*    ino:4557 sk:3 cgroup:/ <->                                             
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*    ino:5127 sk:4 cgroup:/ <->                                             
+udp   UNCONN 0      0               [::1]:323          [::]:*    ino:5128 sk:5 cgroup:/ v6only:1 <->                                    
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*    uid:991 ino:8356 sk:6 cgroup:/system.slice/systemd-resolved.service <->
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*    ino:4558 sk:7 cgroup:/ <->                                             
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*    uid:991 ino:8358 sk:8 cgroup:/system.slice/systemd-resolved.service <->
+
+## curl (HTTP) — testando conectividade
+HTTP/2 200 
+date: Mon, 23 Feb 2026 08:46:10 GMT
+content-type: text/html
+cf-ray: 9d2573834d24ac02-GRU
+last-modified: Wed, 18 Feb 2026 05:33:48 GMT
+allow: GET, HEAD
+accept-ranges: bytes
+age: 1739
+cf-cache-status: HIT
+server: cloudflare
+
+
+## dig (DNS) — pode nao estar instalado
+dig nao encontrado (ok).
+
+## ping (ICMP) — no WSL pode ter restricao; tentamos 2 pacotes
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=115 time=8.46 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=115 time=9.28 ms
+
+--- 8.8.8.8 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 8.462/8.872/9.283/0.410 ms

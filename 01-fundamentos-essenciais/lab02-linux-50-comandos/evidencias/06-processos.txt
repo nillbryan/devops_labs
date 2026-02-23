@@ -1,0 +1,62 @@
+### Evidencia 06 — Processos e recursos (ps/top/free/df/du)
+Mon Feb 23 05:46:10 -03 2026
+
+## ps aux (top 10 por uso de CPU)
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+bryan    63412  200  0.0   8284  4224 pts/3    R+   05:46   0:00 ps aux --sort=-%cpu
+root        42  0.1  0.1  66824 15000 ?        S<s  Feb20   5:49 /usr/lib/systemd/systemd-journald
+root        92  0.0  0.0  25276  6400 ?        Ss   Feb20   0:43 /usr/lib/systemd/systemd-udevd
+root         1  0.0  0.1  21968 12220 ?        Ss   Feb20   0:35 /sbin/init
+bryan    35898  0.0  0.0   8216  7168 pts/3    Ss   Feb22   0:05 -bash
+message+   175  0.0  0.0   9724  4736 ?        Ss   Feb20   0:17 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+systemd+   156  0.0  0.0  91028  7680 ?        Ssl  Feb20   0:16 /usr/lib/systemd/systemd-timesyncd
+root      2546  0.0  0.3 1253172 26276 pts/2   Ssl+ Feb20   0:15 /mnt/wsl/docker-desktop/docker-desktop-user-distro proxy --distro-name Ubuntu --docker-desktop-root /mnt/wsl/docker-desktop C:\Program Files\Docker\Docker\resources
+polkitd   4685  0.0  0.0 308164  7552 ?        Ssl  Feb20   0:08 /usr/lib/polkit-1/polkitd --no-debug
+root       183  0.0  0.1  18164  8192 ?        Ss   Feb20   0:07 /usr/lib/systemd/systemd-logind
+
+## ps aux (top 10 por uso de MEM)
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root      2546  0.0  0.3 1253172 26276 pts/2   Ssl+ Feb20   0:15 /mnt/wsl/docker-desktop/docker-desktop-user-distro proxy --distro-name Ubuntu --docker-desktop-root /mnt/wsl/docker-desktop C:\Program Files\Docker\Docker\resources
+root       216  0.0  0.2 107024 22272 ?        Ssl  Feb20   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root        42  0.1  0.1  66824 15000 ?        S<s  Feb20   5:49 /usr/lib/systemd/systemd-journald
+systemd+   154  0.0  0.1  21460 12800 ?        Ss   Feb20   0:05 /usr/lib/systemd/systemd-resolved
+root         1  0.0  0.1  21968 12220 ?        Ss   Feb20   0:35 /sbin/init
+bryan      399  0.0  0.1  20380 11264 ?        Ss   Feb20   0:04 /usr/lib/systemd/systemd --user
+root       493  0.0  0.1  20196 10880 ?        Ss   Feb20   0:04 /usr/lib/systemd/systemd --user
+root       183  0.0  0.1  18164  8192 ?        Ss   Feb20   0:07 /usr/lib/systemd/systemd-logind
+systemd+   156  0.0  0.0  91028  7680 ?        Ssl  Feb20   0:16 /usr/lib/systemd/systemd-timesyncd
+polkitd   4685  0.0  0.0 308164  7552 ?        Ssl  Feb20   0:08 /usr/lib/polkit-1/polkitd --no-debug
+
+## free -h (memoria)
+               total        used        free      shared  buff/cache   available
+Mem:           7.6Gi       908Mi       5.8Gi       6.5Mi       1.1Gi       6.7Gi
+Swap:          2.0Gi          0B       2.0Gi
+
+## df -h (disco por filesystem)
+Filesystem                                Size  Used Avail Use% Mounted on
+none                                      3.9G     0  3.9G   0% /usr/lib/modules/6.6.87.2-microsoft-standard-WSL2
+none                                      3.9G  4.0K  3.9G   1% /mnt/wsl
+drivers                                   458G  205G  253G  45% /usr/lib/wsl/drivers
+/dev/sde                                 1007G  4.7G  951G   1% /
+none                                      3.9G  792K  3.8G   1% /mnt/wslg
+none                                      3.9G     0  3.9G   0% /usr/lib/wsl/lib
+rootfs                                    3.8G  2.7M  3.8G   1% /init
+none                                      3.9G  564K  3.8G   1% /run
+none                                      3.9G     0  3.9G   0% /run/lock
+none                                      3.9G     0  3.9G   0% /run/shm
+none                                      3.9G   76K  3.9G   1% /mnt/wslg/versions.txt
+none                                      3.9G   76K  3.9G   1% /mnt/wslg/doc
+C:\                                       458G  205G  253G  45% /mnt/c
+tmpfs                                     779M   20K  779M   1% /run/user/1000
+tmpfs                                     779M   20K  779M   1% /run/user/0
+C:\Program Files\Docker\Docker\resources  458G  205G  253G  45% /Docker/host
+none                                      3.9G  608K  3.8G   1% /mnt/wsl/docker-desktop/shared-sockets/host-services
+/dev/sdf                                  137M   71M   55M  57% /mnt/wsl/docker-desktop/docker-desktop-user-distro
+/dev/loop0                                802M  802M     0 100% /mnt/wsl/docker-desktop/cli-tools
+
+## du -sh (tamanho de pastas do lab)
+4.0K	./README.md
+36K	./evidencias
+
+## top/htop (interativo) — NAO roda aqui
+Dica: rode manualmente: top
