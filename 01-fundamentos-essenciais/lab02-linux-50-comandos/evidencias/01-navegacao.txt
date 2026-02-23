@@ -1,0 +1,11 @@
+Mon Feb 23 05:31:31 -03 2026
+/home/bryan/labs-devops/devops_labs/01-fundamentos-essenciais/lab02-linux-50-comandos
+total 16
+drwxr-xr-x 3 bryan bryan 4096 Feb 23 05:30 .
+drwxr-xr-x 4 bryan bryan 4096 Feb 23 04:55 ..
+-rw-r--r-- 1 bryan bryan 1193 Feb 23 05:30 README.md
+drwxr-xr-x 2 bryan bryan 4096 Feb 23 05:18 evidencias
+.
+./evidencias
+/usr/bin/ls
+cd is a shell builtin
