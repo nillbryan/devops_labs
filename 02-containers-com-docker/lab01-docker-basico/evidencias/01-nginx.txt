@@ -1,0 +1,47 @@
+### Evidencia 01 — Nginx (pull/run/test/exec/stop/rm)
+Thu Feb 26 18:38:52 -03 2026
+
+## docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+Digest: sha256:0236ee02dcbce00b9bd83e0f5fbc51069e7e1161bd59d99885b3ae1734f3392e
+Status: Image is up to date for nginx:latest
+docker.io/library/nginx:latest
+
+## docker run -d --name webserver -p 8080:80 nginx
+a98f1ff9d21e1a19620b4633b3b14131ccd4d1583291f85e264073b7a9dfa90f
+
+## docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED                  STATUS                  PORTS                                     NAMES
+a98f1ff9d21e   nginx     "/docker-entrypoint.…"   Less than a second ago   Up Less than a second   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   webserver
+
+## curl -I http://localhost:8080
+HTTP/1.1 200 OK
+Server: nginx/1.29.5
+Date: Thu, 26 Feb 2026 21:38:54 GMT
+Content-Type: text/html
+Content-Length: 615
+Last-Modified: Wed, 04 Feb 2026 15:12:20 GMT
+Connection: keep-alive
+ETag: "698361d4-267"
+Accept-Ranges: bytes
+
+
+## docker exec: mostrar /etc/os-release (sem entrar interativo)
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.3
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+## docker stop/rm
+webserver
+webserver
+
+## docker ps (depois da limpeza)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
