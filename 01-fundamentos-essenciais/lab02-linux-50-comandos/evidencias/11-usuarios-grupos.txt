@@ -1,0 +1,18 @@
+### Evidencia 11 — Usuarios, grupos e permissoes
+Thu Feb 26 18:09:31 -03 2026
+
+## Identidade do usuario
+bryan
+uid=1000(bryan) gid=1000(bryan) groups=1000(bryan),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),100(users),1001(docker)
+
+## getent passwd (usuario atual)
+bryan:x:1000:1000:,,,:/home/bryan:/bin/bash
+
+## Grupos do usuario
+bryan adm cdrom sudo dip plugdev users docker
+
+## umask atual
+0022
+
+## sudo -l (o que voce pode rodar) — pode pedir senha; ok se falhar
+sudo -l precisa de senha ou nao permitido (ok).

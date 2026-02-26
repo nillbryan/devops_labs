@@ -1,0 +1,181 @@
+### Evidencia 08 — Logs do sistema
+Thu Feb 26 18:09:31 -03 2026
+
+## uname / release (contexto)
+Linux NillBryan 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+## journalctl (ultimas 50 linhas) — pode falhar no WSL, ok
+Feb 26 18:06:33 NillBryan login[313]: PAM unable to dlopen(pam_lastlog.so): /usr/lib/security/pam_lastlog.so: cannot open shared object file: No such file or directory
+Feb 26 18:06:33 NillBryan login[313]: PAM adding faulty module: pam_lastlog.so
+Feb 26 18:06:33 NillBryan systemd[1]: dmesg.service: Deactivated successfully.
+Feb 26 18:06:33 NillBryan login[313]: pam_unix(login:session): session opened for user bryan(uid=1000) by bryan(uid=0)
+Feb 26 18:06:33 NillBryan systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+Feb 26 18:06:33 NillBryan systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+Feb 26 18:06:33 NillBryan systemd-logind[181]: New session 1 of user bryan.
+Feb 26 18:06:33 NillBryan systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+Feb 26 18:06:33 NillBryan systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+Feb 26 18:06:33 NillBryan (systemd)[357]: pam_unix(systemd-user:session): session opened for user bryan(uid=1000) by bryan(uid=0)
+Feb 26 18:06:33 NillBryan systemd[357]: Queued start job for default target default.target.
+Feb 26 18:06:33 NillBryan unknown: WSL (243) ERROR: CheckConnection: getaddrinfo() failed: -5
+Feb 26 18:06:33 NillBryan systemd-journald[42]: File /var/log/journal/3f2c398b0c284201a7139f0197949771/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+Feb 26 18:06:33 NillBryan systemd[357]: Created slice app.slice - User Application Slice.
+Feb 26 18:06:33 NillBryan systemd[357]: Started launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+Feb 26 18:06:33 NillBryan systemd[357]: Reached target paths.target - Paths.
+Feb 26 18:06:33 NillBryan systemd[357]: Reached target timers.target - Timers.
+Feb 26 18:06:33 NillBryan systemd[357]: Starting dbus.socket - D-Bus User Message Bus Socket...
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on dirmngr.socket - GnuPG network certificate management daemon.
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+Feb 26 18:06:33 NillBryan systemd[357]: Starting gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on keyboxd.socket - GnuPG public key management service.
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on pk-debconf-helper.socket - debconf communication socket.
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on snapd.session-agent.socket - REST API socket for snapd user session agent.
+Feb 26 18:06:33 NillBryan systemd[357]: Starting wslg-session.service - WSLg user service...
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+Feb 26 18:06:33 NillBryan systemd[357]: Listening on gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+Feb 26 18:06:33 NillBryan systemd[357]: Reached target sockets.target - Sockets.
+Feb 26 18:06:33 NillBryan systemd[357]: Reached target basic.target - Basic System.
+Feb 26 18:06:33 NillBryan systemd[357]: Reached target default.target - Main User Target.
+Feb 26 18:06:33 NillBryan systemd[1]: Started user@1000.service - User Manager for UID 1000.
+Feb 26 18:06:33 NillBryan systemd[1]: Started session-1.scope - Session 1 of User bryan.
+Feb 26 18:06:33 NillBryan systemd[357]: Finished wslg-session.service - WSLg user service.
+Feb 26 18:06:33 NillBryan systemd[357]: Startup finished in 154ms.
+Feb 26 18:06:33 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+Feb 26 18:06:35 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+Feb 26 18:06:37 NillBryan snapd[178]: daemon.go:556: gracefully waiting for running hooks
+Feb 26 18:06:37 NillBryan snapd[178]: daemon.go:558: done waiting for running hooks
+Feb 26 18:06:39 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+Feb 26 18:06:40 NillBryan snapd[178]: overlord.go:538: Released state lock file
+Feb 26 18:06:40 NillBryan snapd[178]: daemon stop requested to wait for socket activation
+Feb 26 18:06:40 NillBryan systemd[1]: snapd.service: Deactivated successfully.
+Feb 26 18:06:47 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+Feb 26 18:07:02 NillBryan systemd[1]: systemd-timedated.service: Deactivated successfully.
+Feb 26 18:07:04 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+Feb 26 18:07:13 NillBryan kernel: hv_balloon: Max. dynamic memory size: 8032 MB
+Feb 26 18:07:36 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+Feb 26 18:08:36 NillBryan wsl-pro-service[184]: WARNING Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+
+## dmesg (ultimas 60 linhas) — pode exigir permissao; ok se falhar
+[    1.871446] scsi 0:0:0:2: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+[    1.877638] sd 0:0:0:2: Attached scsi generic sg2 type 0
+[    1.878474] sd 0:0:0:2: [sdc] 4194312 512-byte logical blocks: (2.15 GB/2.00 GiB)
+[    1.879054] sd 0:0:0:2: [sdc] 4096-byte physical blocks
+[    1.879426] sd 0:0:0:2: [sdc] Write Protect is off
+[    1.879853] sd 0:0:0:2: [sdc] Mode Sense: 0f 00 00 00
+[    1.880477] sd 0:0:0:2: [sdc] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.882033] sd 0:0:0:2: [sdc] Attached SCSI disk
+[    2.005107] EXT4-fs (sda): mounted filesystem 00000000-0000-0000-0000-000000000000 ro without journal. Quota mode: none.
+[    2.015178] EXT4-fs (sdb): mounted filesystem 00000000-0000-0000-0000-000000000000 ro without journal. Quota mode: none.
+[    2.043838] tun: Universal TUN/TAP device driver, 1.6
+[    2.070298] Adding 2097152k swap on /dev/sdc.  Priority:-2 extents:1 across:2097152k 
+[    2.081535] bridge: filtering via arp/ip/ip6tables is no longer available by default. Update your scripts to load br_netfilter if you need this.
+[    2.085096] Bridge firewalling registered
+[    3.412061] hv_pci f4f2bd24-b5ec-490c-871a-6617d1e92c13: PCI VMBus probing: Using version 0x10004
+[    3.414178] hv_pci f4f2bd24-b5ec-490c-871a-6617d1e92c13: PCI host bridge to bus b5ec:00
+[    3.415386] pci_bus b5ec:00: root bus resource [mem 0xc00000000-0xe00001fff window]
+[    3.416329] pci_bus b5ec:00: No busn resource found for root bus, will use [bus 00-ff]
+[    3.419496] pci b5ec:00:00.0: [1af4:105a] type 00 class 0x088000
+[    3.420748] pci b5ec:00:00.0: reg 0x10: [mem 0xe00000000-0xe00000fff 64bit]
+[    3.421785] pci b5ec:00:00.0: reg 0x18: [mem 0xe00001000-0xe00001fff 64bit]
+[    3.422642] pci b5ec:00:00.0: reg 0x20: [mem 0xc00000000-0xdffffffff 64bit]
+[    3.426021] pci_bus b5ec:00: busn_res: [bus 00-ff] end is updated to 00
+[    3.427014] pci b5ec:00:00.0: BAR 4: assigned [mem 0xc00000000-0xdffffffff 64bit]
+[    3.428709] pci b5ec:00:00.0: BAR 0: assigned [mem 0xe00000000-0xe00000fff 64bit]
+[    3.429831] pci b5ec:00:00.0: BAR 2: assigned [mem 0xe00001000-0xe00001fff 64bit]
+[    3.430909] virtio-pci b5ec:00:00.0: enabling device (0000 -> 0002)
+[    3.449979] virtiofs virtio1: Cache len: 0x200000000 @ 0xc00000000
+[    3.656225] scsi 0:0:0:3: Direct-Access     Msft     Virtual Disk     1.0  PQ: 0 ANSI: 5
+[    3.665436] sd 0:0:0:3: Attached scsi generic sg3 type 0
+[    3.666132] sd 0:0:0:3: [sdd] 2147483648 512-byte logical blocks: (1.10 TB/1.00 TiB)
+[    3.667189] sd 0:0:0:3: [sdd] 4096-byte physical blocks
+[    3.667787] sd 0:0:0:3: [sdd] Write Protect is off
+[    3.668330] sd 0:0:0:3: [sdd] Mode Sense: 0f 00 00 00
+[    3.668920] sd 0:0:0:3: [sdd] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    3.671034] sd 0:0:0:3: [sdd] Attached SCSI disk
+[    5.439487] EXT4-fs (sdd): recovery complete
+[    5.443022] EXT4-fs (sdd): mounted filesystem e3e01c84-4bfd-41f2-8b86-2572feda11bc r/w with ordered data mode. Quota mode: none.
+[    6.317692] misc dxg: dxgk: dxgkio_is_feature_enabled: Ioctl failed: -22
+[    6.322407] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    6.323760] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    6.325153] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    6.326512] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[    6.332030] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    6.334496] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    6.336037] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -22
+[    6.339924] misc dxg: dxgk: dxgkio_query_adapter_info: Ioctl failed: -2
+[    6.775170] Failed to connect to bus: No such file or directory
+[    6.856563] systemd-journald[42]: Collecting audit messages is disabled.
+[    6.913066] systemd-journald[42]: Received client request to flush runtime journal.
+[    6.916608] systemd-journald[42]: File /var/log/journal/3f2c398b0c284201a7139f0197949771/system.journal corrupted or uncleanly shut down, renaming and replacing.
+[    7.141329] ACPI: battery: Slot [BAT1] (battery present)
+[    7.155832] ACPI: AC: AC Adapter [AC1] (on-line)
+[    7.388686] kvm_intel: Using Hyper-V Enlightened VMCS
+[    7.690932] intel_rapl_msr: PL4 support detected.
+[    7.800233] weston[265]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+[    8.480835] TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.
+[    8.482746] WSL (243) ERROR: CheckConnection: getaddrinfo() failed: -5
+[    9.184575] systemd-journald[42]: File /var/log/journal/3f2c398b0c284201a7139f0197949771/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+[   49.373700] hv_balloon: Max. dynamic memory size: 8032 MB
+
+## syslog (se existir)
+2026-02-26T18:06:32.204361-03:00 NillBryan systemd[1]: Started systemd-timedated.service - Time & Date Service.
+2026-02-26T18:06:32.216688-03:00 NillBryan systemd[1]: Finished snapd.seeded.service - Wait until snapd is fully seeded.
+2026-02-26T18:06:32.217926-03:00 NillBryan systemd[1]: snapd.autoimport.service - Auto import assertions from block devices was skipped because no trigger condition checks were met.
+2026-02-26T18:06:32.266223-03:00 NillBryan kernel: weston[265]: memfd_create() called without MFD_EXEC or MFD_NOEXEC_SEAL set
+2026-02-26T18:06:32.934645-03:00 NillBryan wsl-pro-service[184]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+2026-02-26T18:06:32.944617-03:00 NillBryan kernel: TCP: eth0: Driver has suspect GRO implementation, TCP performance may be compromised.
+2026-02-26T18:06:32.953620-03:00 NillBryan landscape-config[173]: Registered:    False
+2026-02-26T18:06:32.953761-03:00 NillBryan landscape-config[173]: Config Path:   /etc/landscape/client.conf
+2026-02-26T18:06:32.953843-03:00 NillBryan landscape-config[173]: Data Path      /var/lib/landscape/client
+2026-02-26T18:06:33.015953-03:00 NillBryan systemd[1]: landscape-client.service: Skipped due to 'exec-condition'.
+2026-02-26T18:06:33.016154-03:00 NillBryan systemd[1]: Condition check resulted in landscape-client.service - Landscape client daemons being skipped.
+2026-02-26T18:06:33.016932-03:00 NillBryan systemd[1]: Reached target multi-user.target - Multi-User System.
+2026-02-26T18:06:33.017605-03:00 NillBryan systemd[1]: Reached target graphical.target - Graphical Interface.
+2026-02-26T18:06:33.034986-03:00 NillBryan systemd[1]: Starting systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP...
+2026-02-26T18:06:33.040176-03:00 NillBryan systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+2026-02-26T18:06:33.040392-03:00 NillBryan systemd[1]: Finished systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP.
+2026-02-26T18:06:33.041366-03:00 NillBryan systemd[1]: Startup finished in 2.057s.
+2026-02-26T18:06:33.300704-03:00 NillBryan systemd[1]: dmesg.service: Deactivated successfully.
+2026-02-26T18:06:33.527791-03:00 NillBryan systemd[1]: Created slice user-1000.slice - User Slice of UID 1000.
+2026-02-26T18:06:33.529192-03:00 NillBryan systemd[1]: Starting user-runtime-dir@1000.service - User Runtime Directory /run/user/1000...
+2026-02-26T18:06:33.552109-03:00 NillBryan systemd[1]: Finished user-runtime-dir@1000.service - User Runtime Directory /run/user/1000.
+2026-02-26T18:06:33.553774-03:00 NillBryan systemd[1]: Starting user@1000.service - User Manager for UID 1000...
+2026-02-26T18:06:33.666628-03:00 NillBryan systemd[357]: Queued start job for default target default.target.
+2026-02-26T18:06:33.673834-03:00 NillBryan kernel: WSL (243) ERROR: CheckConnection: getaddrinfo() failed: -5
+2026-02-26T18:06:33.673862-03:00 NillBryan kernel: systemd-journald[42]: File /var/log/journal/3f2c398b0c284201a7139f0197949771/user-1000.journal corrupted or uncleanly shut down, renaming and replacing.
+2026-02-26T18:06:33.701251-03:00 NillBryan systemd[357]: Created slice app.slice - User Application Slice.
+2026-02-26T18:06:33.701405-03:00 NillBryan systemd[357]: Started launchpadlib-cache-clean.timer - Clean up old files in the Launchpadlib cache.
+2026-02-26T18:06:33.701494-03:00 NillBryan systemd[357]: Reached target paths.target - Paths.
+2026-02-26T18:06:33.701545-03:00 NillBryan systemd[357]: Reached target timers.target - Timers.
+2026-02-26T18:06:33.701599-03:00 NillBryan systemd[357]: Starting dbus.socket - D-Bus User Message Bus Socket...
+2026-02-26T18:06:33.701649-03:00 NillBryan systemd[357]: Listening on dirmngr.socket - GnuPG network certificate management daemon.
+2026-02-26T18:06:33.701686-03:00 NillBryan systemd[357]: Listening on gpg-agent-browser.socket - GnuPG cryptographic agent and passphrase cache (access for web browsers).
+2026-02-26T18:06:33.701710-03:00 NillBryan systemd[357]: Listening on gpg-agent-extra.socket - GnuPG cryptographic agent and passphrase cache (restricted).
+2026-02-26T18:06:33.701724-03:00 NillBryan systemd[357]: Starting gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation)...
+2026-02-26T18:06:33.701739-03:00 NillBryan systemd[357]: Listening on gpg-agent.socket - GnuPG cryptographic agent and passphrase cache.
+2026-02-26T18:06:33.701752-03:00 NillBryan systemd[357]: Listening on keyboxd.socket - GnuPG public key management service.
+2026-02-26T18:06:33.701768-03:00 NillBryan systemd[357]: Listening on pk-debconf-helper.socket - debconf communication socket.
+2026-02-26T18:06:33.701782-03:00 NillBryan systemd[357]: Listening on snapd.session-agent.socket - REST API socket for snapd user session agent.
+2026-02-26T18:06:33.701800-03:00 NillBryan systemd[357]: Starting wslg-session.service - WSLg user service...
+2026-02-26T18:06:33.701815-03:00 NillBryan systemd[357]: Listening on dbus.socket - D-Bus User Message Bus Socket.
+2026-02-26T18:06:33.701828-03:00 NillBryan systemd[357]: Listening on gpg-agent-ssh.socket - GnuPG cryptographic agent (ssh-agent emulation).
+2026-02-26T18:06:33.701926-03:00 NillBryan systemd[357]: Reached target sockets.target - Sockets.
+2026-02-26T18:06:33.701954-03:00 NillBryan systemd[357]: Reached target basic.target - Basic System.
+2026-02-26T18:06:33.701971-03:00 NillBryan systemd[357]: Reached target default.target - Main User Target.
+2026-02-26T18:06:33.701987-03:00 NillBryan systemd[1]: Started user@1000.service - User Manager for UID 1000.
+2026-02-26T18:06:33.702032-03:00 NillBryan systemd[1]: Started session-1.scope - Session 1 of User bryan.
+2026-02-26T18:06:33.718943-03:00 NillBryan systemd[357]: Finished wslg-session.service - WSLg user service.
+2026-02-26T18:06:33.719066-03:00 NillBryan systemd[357]: Startup finished in 154ms.
+2026-02-26T18:06:33.944407-03:00 NillBryan wsl-pro-service[184]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+2026-02-26T18:06:35.952312-03:00 NillBryan wsl-pro-service[184]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+2026-02-26T18:06:37.127071-03:00 NillBryan snapd[178]: daemon.go:556: gracefully waiting for running hooks
+2026-02-26T18:06:37.127155-03:00 NillBryan snapd[178]: daemon.go:558: done waiting for running hooks
+2026-02-26T18:06:39.969866-03:00 NillBryan wsl-pro-service[184]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+2026-02-26T18:06:40.129382-03:00 NillBryan snapd[178]: overlord.go:538: Released state lock file
+2026-02-26T18:06:40.129436-03:00 NillBryan snapd[178]: daemon stop requested to wait for socket activation
+2026-02-26T18:06:40.132297-03:00 NillBryan systemd[1]: snapd.service: Deactivated successfully.
+2026-02-26T18:06:47.998558-03:00 NillBryan wsl-pro-service[184]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+2026-02-26T18:07:02.240681-03:00 NillBryan systemd[1]: systemd-timedated.service: Deactivated successfully.
+2026-02-26T18:07:04.017122-03:00 NillBryan wsl-pro-service[184]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Nillb/.ubuntupro/.address": open /mnt/c/Users/Nillb/.ubuntupro/.address: no such file or directory
+2026-02-26T18:07:13.968922-03:00 NillBryan kernel: hv_balloon: Max. dynamic memory size: 8032 MB

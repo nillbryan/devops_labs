@@ -1,0 +1,31 @@
+### Evidencia 10 — Backup e compactacao (tar/gzip)
+Thu Feb 26 18:09:31 -03 2026
+
+## Conteudo a ser compactado:
+/tmp/lab02-linux-find/b/bravo.txt
+/tmp/lab02-linux-find/b/error.log
+/tmp/lab02-linux-find/b/info.log
+/tmp/lab02-linux-find/a/alpha.txt
+/tmp/lab02-linux-find/c/charlie.txt
+
+## Criando tar.gz
+-rw-r--r-- 1 bryan bryan 318 Feb 26 18:09 /tmp/lab02-backup/lab02-find-backup.tar.gz
+
+## Listando conteudo do tar.gz
+lab02-linux-find/
+lab02-linux-find/b/
+lab02-linux-find/b/bravo.txt
+lab02-linux-find/b/error.log
+lab02-linux-find/b/info.log
+lab02-linux-find/a/
+lab02-linux-find/a/alpha.txt
+lab02-linux-find/c/
+lab02-linux-find/c/charlie.txt
+
+## Extraindo em pasta de restore
+## Arquivos restaurados:
+/tmp/lab02-restore/lab02-linux-find/b/bravo.txt
+/tmp/lab02-restore/lab02-linux-find/b/error.log
+/tmp/lab02-restore/lab02-linux-find/b/info.log
+/tmp/lab02-restore/lab02-linux-find/a/alpha.txt
+/tmp/lab02-restore/lab02-linux-find/c/charlie.txt

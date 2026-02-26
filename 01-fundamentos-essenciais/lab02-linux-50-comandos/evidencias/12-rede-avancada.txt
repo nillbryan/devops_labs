@@ -1,0 +1,43 @@
+### Evidencia 12 — Rede avancada e troubleshooting
+Thu Feb 26 18:09:31 -03 2026
+
+## ss (conexoes e portas)
+Netid State  Recv-Q Send-Q  Local Address:Port Peer Address:PortProcess                                                                 
+udp   UNCONN 0      0          127.0.0.54:53        0.0.0.0:*    uid:991 ino:5072 sk:1 cgroup:/system.slice/systemd-resolved.service <->
+udp   UNCONN 0      0       127.0.0.53%lo:53        0.0.0.0:*    uid:991 ino:5070 sk:2 cgroup:/system.slice/systemd-resolved.service <->
+udp   UNCONN 0      0      10.255.255.254:53        0.0.0.0:*    ino:8205 sk:3 cgroup:/ <->                                             
+udp   UNCONN 0      0           127.0.0.1:323       0.0.0.0:*    ino:3205 sk:4 cgroup:/ <->                                             
+udp   UNCONN 0      0               [::1]:323          [::]:*    ino:3206 sk:5 cgroup:/ v6only:1 <->                                    
+tcp   LISTEN 0      1000   10.255.255.254:53        0.0.0.0:*    ino:8206 sk:6 cgroup:/ <->                                             
+tcp   LISTEN 0      4096    127.0.0.53%lo:53        0.0.0.0:*    uid:991 ino:5071 sk:7 cgroup:/system.slice/systemd-resolved.service <->
+tcp   LISTEN 0      4096       127.0.0.54:53        0.0.0.0:*    uid:991 ino:5073 sk:8 cgroup:/system.slice/systemd-resolved.service <->
+
+## ARP/vizinhos (ip neigh) — cache de vizinhanca
+172.23.80.1 dev eth0 lladdr 00:15:5d:0b:d7:50 REACHABLE 
+
+## DNS (resolvectl) — pode nao existir
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+  resolv.conf mode: foreign
+Current DNS Server: 10.255.255.254
+       DNS Servers: 10.255.255.254
+
+Link 2 (eth0)
+    Current Scopes: none
+         Protocols: -DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+
+## curl -I (cabecalho HTTP) — valida saida
+HTTP/2 200 
+date: Thu, 26 Feb 2026 21:09:32 GMT
+content-type: text/html
+cf-ray: 9d426c8bdb9b01a1-GRU
+last-modified: Wed, 25 Feb 2026 07:20:54 GMT
+allow: GET, HEAD
+accept-ranges: bytes
+age: 3132
+cf-cache-status: HIT
+server: cloudflare
+
+
+## traceroute (se existir)
+traceroute nao instalado (ok).

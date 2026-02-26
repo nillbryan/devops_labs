@@ -1,0 +1,29 @@
+### Evidencia 09 — Find avancado + hash
+Thu Feb 26 18:09:31 -03 2026
+
+## Montando arvore de testes em /tmp
+
+## find: listar arquivos .txt
+/tmp/lab02-linux-find/b/bravo.txt
+/tmp/lab02-linux-find/a/alpha.txt
+/tmp/lab02-linux-find/c/charlie.txt
+
+## find: listar arquivos maiores que 0 bytes (todos aqui)
+/tmp/lab02-linux-find/b/bravo.txt
+/tmp/lab02-linux-find/b/error.log
+/tmp/lab02-linux-find/b/info.log
+/tmp/lab02-linux-find/a/alpha.txt
+/tmp/lab02-linux-find/c/charlie.txt
+
+## find + grep: achar a palavra 'erro' nos logs
+/tmp/lab02-linux-find/b/error.log:1:erro: falha
+
+## sha256sum: gerar hash de todos os arquivos
+39bec577f012b66eabfbee11b77f758bbc376b6fcf55a02eb529e6391011bc33  /tmp/lab02-linux-find/b/info.log
+4af0ae82d4345f992fe412ca4123fa4ebda799baead8e13e859d8d874d8d9b31  /tmp/lab02-linux-find/b/error.log
+5da8f23decf397b13f4f55b6fb8a61936238bfe08ed9d901132974f1beccc45c  /tmp/lab02-linux-find/b/bravo.txt
+999d1d048ee9123272dd9b718680551c83e867935b47c2650e6906dc22674e47  /tmp/lab02-linux-find/c/charlie.txt
+b6a98d9ce9a2d9149288fa3df42d377c3e42737afdcdaf714e33c0a100b51060  /tmp/lab02-linux-find/a/alpha.txt
+
+## Alterando um arquivo e mostrando hash mudar
+a44ba1c5f9ecb20f6a028b26f30591b72fd1341f27a2636521e18f715089e6e0  /tmp/lab02-linux-find/a/alpha.txt
