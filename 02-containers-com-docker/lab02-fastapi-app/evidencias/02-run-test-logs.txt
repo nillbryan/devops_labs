@@ -1,0 +1,18 @@
+### Evidencia 02 — Run/Test/Logs FastAPI
+Sat Mar  7 17:45:11 -03 2026
+
+## docker run (detached) -p 8000:8000
+38c110a6be5891f00f09a0af2ee8f5d2caf80ebb6f244047cdf1a33da6c10bd0
+
+## docker ps (filtrando fastapi_lab02)
+CONTAINER ID   IMAGE               COMMAND                  CREATED         STATUS                  PORTS                                         NAMES
+38c110a6be58   fastapi-app:lab02   "uvicorn main:app --…"   2 seconds ago   Up Less than a second   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp   fastapi_lab02
+
+## curl /
+
+
+## curl /health
+
+
+## docker logs (ultimas 30 linhas)
+
