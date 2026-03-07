@@ -1,0 +1,10 @@
+### Evidencia 01 — Build da imagem FastAPI
+Sat Mar  7 17:43:46 -03 2026
+
+## docker build -t fastapi-app:lab02 .
+
+## docker images (filtrando fastapi-app)
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+fastapi-app:lab02    97bd3c8ad982        253MB         60.7MB        
+hello-world:latest   ef54e839ef54       25.9kB         9.52kB        
+fastapi-app:lab02    97bd3c8ad982        253MB         60.7MB        

@@ -1,0 +1,9 @@
+### Evidencia 03 — Cleanup
+Sat Mar  7 17:46:11 -03 2026
+
+## docker stop/rm fastapi_lab02
+fastapi_lab02
+fastapi_lab02
+
+## docker ps (depois da limpeza)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
