@@ -1,0 +1,13 @@
+### Evidencia 01 — Build (single-stage vs multistage) + size compare
+Sun Mar  8 19:54:31 -03 2026
+
+## Build single-stage
+
+## Build multistage
+
+## Imagens geradas (filtrando node-app)
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+fastapi-app:lab02    97bd3c8ad982        253MB         60.7MB        
+hello-world:latest   ef54e839ef54       25.9kB         9.52kB        
+node-app:multi       12f7c5667d3c        181MB         44.9MB        
+node-app:single      6dd58752bf0d       1.57GB          395MB        

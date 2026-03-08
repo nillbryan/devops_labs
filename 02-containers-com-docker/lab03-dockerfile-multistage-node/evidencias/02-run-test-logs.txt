@@ -1,0 +1,15 @@
+### Evidencia 02 — Run/Test/Logs (multistage)
+Sun Mar  8 19:56:29 -03 2026
+
+## Run (multistage) -p 3000:3000
+b94aefaf1cb5a81f0fefc430956173a1a4e7e1f336bcf5bb8841544923f8aa4a
+
+## docker ps
+CONTAINER ID   IMAGE            COMMAND                  CREATED        STATUS                  PORTS                                         NAMES
+b94aefaf1cb5   node-app:multi   "docker-entrypoint.s…"   1 second ago   Up Less than a second   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   node_lab03
+
+## curl /
+
+## curl /health
+
+## logs (ultimas 20 linhas)
