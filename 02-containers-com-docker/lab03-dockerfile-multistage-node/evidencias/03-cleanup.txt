@@ -1,0 +1,8 @@
+### Evidencia 03 — Cleanup
+Sun Mar  8 19:56:46 -03 2026
+
+node_lab03
+node_lab03
+
+## docker ps (depois da limpeza)
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
