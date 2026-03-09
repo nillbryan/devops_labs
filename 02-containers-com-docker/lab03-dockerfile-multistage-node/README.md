@@ -16,11 +16,11 @@ Criar uma imagem Docker **profissional** usando **multistage build** e comprovar
 ## Como rodar (passo a passo)
 
 ### 1) Build das imagens (comparação)
-**O que faz:** cria duas imagens: uma “normal” e outra “multistage”.
-**Por que:** multistage reduz tamanho e deixa a imagem mais enxuta/profissional.
+**O que faz:** cria duas imagens: uma “normal” (single-stage) e outra “multistage”.  
+**Por que:** multistage reduz tamanho e remove “peso” desnecessário da imagem final.
 
 ```bash
 cd 02-containers-com-docker/lab03-dockerfile-multistage-node/app
 docker build -t node-app:single -f Dockerfile.single .
-docker build -t node-app:multi -f Dockerfile .
+docker build -t node-app:multi  -f Dockerfile .
 docker images | grep -E '^node-app'
