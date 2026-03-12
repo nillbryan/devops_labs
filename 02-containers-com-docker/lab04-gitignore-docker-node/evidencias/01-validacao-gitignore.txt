@@ -1,0 +1,42 @@
+### Evidencia 01 — Validacao do .gitignore (Docker/Node)
+Thu Mar 12 20:04:47 -03 2026
+
+## 1) Contexto
+Branch atual:
+lab06-docker-gitignore
+
+## 2) Criando arquivos 'lixo' para testar ignore (NAO commitar)
+
+## 3) Git status (deve continuar limpo OU sem mostrar esses arquivos)
+On branch lab06-docker-gitignore
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	02-containers-com-docker/lab04-gitignore-docker-node/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+## 4) Prova: quais regras estao ignorando (git check-ignore -v)
+.gitignore:137:02-containers-com-docker/**/.env	02-containers-com-docker/lab03-dockerfile-multistage-node/app/.env
+.gitignore:136:02-containers-com-docker/**/*.log	02-containers-com-docker/lab03-dockerfile-multistage-node/app/app.log
+.gitignore:134:02-containers-com-docker/**/dist/	02-containers-com-docker/lab03-dockerfile-multistage-node/app/dist
+.gitignore:133:02-containers-com-docker/**/node_modules/	02-containers-com-docker/lab03-dockerfile-multistage-node/app/node_modules
+
+## 5) Limpeza local (remover arquivos de teste)
+
+## 6) Git status final (deve estar limpo)
+On branch lab06-docker-gitignore
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	02-containers-com-docker/lab04-gitignore-docker-node/
+
+no changes added to commit (use "git add" and/or "git commit -a")

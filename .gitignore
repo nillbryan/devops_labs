@@ -126,3 +126,13 @@ ENV/
 Icon?
 ehthumbs.db
 Thumbs.db
+
+# =========================
+# Labs Docker/Node — ignorar lixo e segredos
+# =========================
+02-containers-com-docker/**/node_modules/
+02-containers-com-docker/**/dist/
+02-containers-com-docker/**/build/
+02-containers-com-docker/**/*.log
+02-containers-com-docker/**/.env
+02-containers-com-docker/**/.env.*
